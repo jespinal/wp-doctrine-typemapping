@@ -26,76 +26,37 @@ class WpUsers
     private $ID;
 
     /**
-     * @ORM\Column(
-           type="string", 
-           length=60,
-           options={
-               "default":""
-           }
-       )
+     * @ORM\Column( type="string", length=60, options={ "default":"" })
      */
     private $user_login;
 
     /**
-     * @ORM\Column(
-           type="string", 
-           length=255,
-           options={
-               "default":""
-           }
-       )
+     * @ORM\Column( type="string", length=255, options={ "default":"" })
      */
     private $user_pass;
 
     /**
-     * @ORM\Column(
-           type="string", 
-           length=50,
-           options={
-               "default":""
-           }
-       )
+     * @ORM\Column( type="string", length=50, options={ "default":"" })
      */
     private $user_nicename;
 
     /**
-     * @ORM\Column(
-           type="string", 
-           length=100,
-           options={
-               "default":""
-           }
-       )
+     * @ORM\Column( type="string", length=100, options={ "default":"" })
      */
     private $user_email;
 
     /**
-     * @ORM\Column(
-           type="string", 
-           length=100,
-           options={
-               "default":""
-           }
-       )
+     * @ORM\Column( type="string", length=100, options={ "default":"" })
      */
     private $user_url;
 
     /**
-     * @ORM\Column(
-         type="datetime", 
-         options={"default":"0000-00-00 00:00:00"}
-       )
+     * @ORM\Column( type="datetime", options={"default":"0000-00-00 00:00:00"})
      */
     private $user_registered;
 
     /**
-     * @ORM\Column(
-           type="string", 
-           length=255,
-           options={
-               "default":""
-           }
-       )
+     * @ORM\Column(type="string", length=255, options={"default":""})
      */
     private $user_activation_key;
 
@@ -105,33 +66,9 @@ class WpUsers
     private $user_status;
 
     /**
-     * @ORM\Column(
-           type="string", 
-           length=250,
-           options={
-               "default":""
-           }
-       )
+     * @ORM\Column(type="string", length=250, options={"default":""})
      */
     private $display_name;
-
-    /**
-     * @ORM\Column(
-           type="boolean", 
-           length=1,
-           options={"default":0}
-       )
-     */
-    private $deleted;
-
-    /**
-     * @ORM\Column(
-           type="boolean",
-           length=1,
-           options={"default":0}
-       )
-     */
-    private $spam;
 
     public function getID(): ?string
     {
@@ -242,30 +179,6 @@ class WpUsers
     public function setDisplayName(string $display_name): self
     {
         $this->display_name = $display_name;
-
-        return $this;
-    }
-
-    public function isDeleted(): ?bool
-    {
-        return $this->deleted;
-    }
-
-    public function setDeleted(bool $deleted): self
-    {
-        $this->deleted = $deleted;
-
-        return $this;
-    }
-
-    public function isSpam(): ?bool
-    {
-        return $this->spam;
-    }
-
-    public function setSpam(bool $spam): self
-    {
-        $this->spam = $spam;
 
         return $this;
     }
